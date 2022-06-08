@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css"></link>
+    <script type="text/javascript" src="https://unpkg.com/butterchurn"></script>
+    <script type="text/javascript" src="https://unpkg.com/butterchurn-presets"></script>
+  </head>
+
+  <body>
+    <main>
+      <div class="group">
+        <div class="url">
+          <div class="search">
+            <input
+              id="url_input"
+              class="url_input"
+              type="url"
+              placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            />
+            <button class="searchbtn" type="submit"> <img src="/assets/search-12-513.png" alt="search" width="17" height="17"></button>
+          </div>
+        </div>  
+      </div>
+
+      <div class="container">
+          <canvas id="canvas" style="height: 100%; width: 100%; position: absolute; z-index:-1; left: 0; top: 0;"></canvas>
+        <div class="group" id="player_group">
+
+          <div class="player">
+            <div class="progress">
+                <div class="progress-bar"></div>
+            </div>
+
+            <div class="controls">
+              <div class="changexspeed"> 
+                <div>
+                  <button class="player-button change"> <img id="change-img" src="/assets/change.png" alt="change" width="35" height="35"> </button> 
+                </div>
+                <div class="speed-container">
+                  <button class="player-button speed"> <img id="speed-img" src="/assets/speed.png" alt="speed" width="35" height="35"> </button>
+                </div>
+                <div class="tempo-container">
+                  <div class="tempo" id="tempo">
+                    <div class="tempo-input" id="tempo-input"></div>
+                  </div>
+                </div>
+              </div>
+              <div> 
+                  <button id="playbtn">
+                      <svg class="icon-play" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" width="86" height="86" viewBox="0 0 36 36" data-play="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z" data-pause="M 12,26 16.33,26 16.33,10 12,10 z M 20.66,26 25,26 25,10 20.66,10 z">
+                        <path d="M 12,26 18.5,22 18.5,14 12,10 z M 18.5,22 25,18 25,18 18.5,14 z"></path>
+                      </svg>
+                  </button>
+              </div>
+              <div class="loopxvolume"> 
+                <div>
+                  <button class="player-button loop" id="loop"> <img  id="loop-img" src="/assets/loop.png" alt="loop" width="35" height="35"> </button> 
+                </div>
+                <div>
+                  <button class="player-button volume" id="volume"> <img  id="volume-img" src="/assets/volume.png" alt="volume" width="35" height="35"> </button> 
+                </div>
+                <div class="volume-container">
+                  <div class="volume-slider" id="volume-slider">
+                    <div class="volume-amnt" id="volume-amnt"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/app.js"></script>
+  </body>
+
+</html>

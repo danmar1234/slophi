@@ -1,0 +1,253 @@
+body {
+  --spacing: 0.75rem;
+  font-family: sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  margin: 0.75rem;
+  padding-bottom: 2rem;
+  color: hsl(0, 0%, 100%);
+  background-color: hsla(244, 82%, 46%, 0.911);
+  background-attachment: fixed;
+  background-image: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%);
+}
+
+@media (min-width: 48em) {
+  body {
+    --spacing: 1rem;
+  }
+}
+
+body * {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3 {
+  font-weight: 100;
+}
+h1 {
+  margin: 1em 0 0.5em;
+}
+.group {
+  padding: 0.1rem 1rem;
+  width: 100%;
+}
+
+#player_group {
+  padding: 0;
+  position: fixed;
+  bottom: 0rem;
+  right: 0rem;
+  background-color: rgba(0, 0, 0, 0.096);
+}
+
+#url_input {
+  border-radius: 1.25rem;
+  border-width: 0;
+  width: 100%;
+  font: inherit;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+.searchbtn {
+  background-color: rgba(255, 255, 255, 0);
+  outline: none;
+  border-width: 0;
+  border-radius: 1.25rem;
+  /*
+  transition: background-color 180ms;*/
+}
+/*
+.searchbtn:hover {
+  background-color: rgba(255, 255, 255, 0.116);
+}
+.searchbtn:active {
+  background-color: rgba(0, 0, 0, 0.048);
+}
+*/
+.changexspeed {
+  display: flex;
+}
+.tempo-container {
+  height: 6rem;
+  width: 9rem;
+  padding: 2.5rem 1.5rem 0 0;
+}
+.tempo {
+  background: rgb(189, 189, 189);
+  width: 0%;
+  height: 0.3rem;
+  transition: all 0.5s ease 3s;
+  opacity: 0;
+  cursor: pointer;
+}
+.tempo-input {
+  background: white;
+  width: 50%;
+  height: 0.3rem;
+}
+
+.speed-container:hover + .tempo-container > .tempo {
+  right: -150px;
+  opacity: 1;
+  width: 100%;
+  transition: all 0.5s ease 0s;
+}
+.tempo:hover {
+  opacity: 1;
+  width: 100%;
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.loopxvolume {
+  display: flex;
+}
+.volume-container {
+  padding: 2.5rem 1.5rem 0 0;
+  height: 6rem;
+  width: 10rem;
+}
+.volume-slider {
+  background: rgb(189, 189, 189);
+  width: 90%;
+  height: 0.3rem;
+  cursor: pointer;
+}
+.volume-amnt {
+  background: white;
+  width: 100%;
+  height: 0.3rem;
+}
+
+.progress {
+  background: rgb(189, 189, 189);
+  height: 0.5rem;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+.progress-bar {
+  background: white;
+  width: 0%;
+  height: 100%;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+}
+
+.player-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 1.5rem;
+}
+.volume {
+  padding: 1.5rem 1.3rem 1.5rem 1.5rem;
+}
+.icon-play > path {
+  transition: all 0.3s ease;
+}
+#playbtn {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+@media (max-width: 731px) {
+  #change-img {
+    width: 25px;
+    height: 25px;
+  }
+  #speed-img {
+    width: 25px;
+    height: 25px;
+  }
+  #loop-img {
+    width: 25px;
+    height: 25px;
+  }
+  #volume-img {
+    width: 25px;
+    height: 25px;
+  }
+  .volume-container {
+    padding: 1.8rem 0 0 0;
+    height: 2rem;
+    width: 5rem;
+  }
+  .tempo-container {
+    padding: 1.8rem 0 0 0;
+    height: 2rem;
+    width: 5rem;
+  }
+  .player-button {
+    padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+  }
+  .icon-play {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 438px) {
+  .loop {
+    padding: 1.2rem 0.8rem 0.8rem 3.6rem;
+  }
+  .volume-container {
+    display: none;
+  }
+}
+@media (max-width: 402px) {
+  .loop {
+    padding: 1.2rem 0.8rem 0.8rem 0.8rem;
+  }
+  .tempo-container {
+    width: 3rem;
+    padding: 1.9rem 0 0 0;
+  }
+}
+
+#url_input:focus {
+  background-color: rgba(255, 255, 255, 0);
+}
+#url_input:active {
+  background-color: rgba(255, 255, 255, 0);
+}
+input:-webkit-autofill {
+  transition: all 0s 50000s;
+}
+.search {
+  border-radius: 1.25rem;
+  border-width: 0;
+  display: flex;
+
+  line-height: 1;
+  width: clamp(16rem, 25%, 25rem);
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  font: inherit;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.url {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 0rem 0.6rem 0rem 0rem;
+}
+
+.player_audio {
+  width: 100%;
+}
+.player_display {
+  font-size: 1.25rem;
+}
+
+.tempo_display {
+  font-weight: 700;
+  min-width: 3em;
+  margin-left: 0.5em;
+}
